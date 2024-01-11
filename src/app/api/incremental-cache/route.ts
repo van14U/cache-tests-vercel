@@ -24,7 +24,8 @@ export async function GET(request: NextRequest) {
     JSON.stringify({ title }), {
     status: 200,
     headers: {
-      'Cache-Control': 'public, max-age=0, s-maxage=60, stale-while-revalidate=59',
+      // 'Cache-Control': 'public, max-age=0, s-maxage=60, stale-while-revalidate=59',
+      'Cache-Control': 'public, max-age=0, s-maxage=60, stale-while-revalidate=86400, stale-if-error=86400',
       // 'CDN-Cache-Control': 'public, s-maxage=60',
       // 'Vercel-CDN-Cache-Control': 'public, s-maxage=60',
     }
