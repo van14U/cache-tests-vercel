@@ -3,7 +3,7 @@ import { type NextRequest } from 'next/server'
 export const runtime = "edge";
 
 export async function GET(request: NextRequest) {
-  // await new Promise((resolve) => setTimeout(resolve, 2000))
+  await new Promise((resolve) => setTimeout(resolve, 2000))
   const title = await fetch('https://hacker-news.firebaseio.com/v0/newstories.json', {
     next: {
       revalidate: 600
